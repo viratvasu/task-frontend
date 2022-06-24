@@ -1,0 +1,85 @@
+.backdrop{
+    z-index:5;
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.95);
+  }
+  .modal-content{
+    display: inline-flex;
+    align-items: flex-start;
+    max-height:90%;
+    max-width:90%;
+    overflow: auto;
+    /* position: relative; */
+  }
+  .backdrop .modal-content .data-container{
+    background-color:#fff;
+    padding: 20px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .backdrop .modal-content .data-container .data-box{
+    background-color:rgb(199, 199, 199);
+    padding: auto;
+    border:1px solid black;
+    border-radius: 4px;
+    margin:10px;
+    padding:10px;
+    width:calc(100%/3 - 20px);
+  }
+  .backdrop .modal-content .data-container .data-box .title{
+    text-align: center;
+  }
+  .backdrop .modal-content .data-container .data-box .divider{
+    margin:10px 0;
+    height:1px;
+    width:100%;
+    background-color: grey;
+  }
+  .backdrop .modal-content .data-container .data-box .body{
+    margin-bottom:20px;
+  }
+  .backdrop .modal-content .data-container .data-box .author{
+    text-align: end;
+  }
+  .backdrop .close-btn{
+    z-index:20;
+    background-color: #fff;
+    border:1px solid black;
+    padding: 5px;
+    height:35px;
+    width:35px;
+    border-radius: 50%;
+    margin-right: 10px;
+    position: absolute;
+    top:10px;
+    right:10px;
+    transition: all 0.2s linear;
+  }
+  .backdrop .close-btn:hover{
+    top:5px;
+  }
+  #error-msg{
+    color:red;
+    text-align: center;
+    margin:15px 0 0 0;
+  }
+
+@media only screen and (max-width: 600px) {
+    .backdrop .modal-content .data-container .data-box{
+        width:calc(100% - 20px);
+      }
+  }
+  @media only screen and (min-width: 768px) {
+    .backdrop .modal-content .data-container .data-box{
+        width:calc(100%/2 - 20px);
+      }
+  } 
